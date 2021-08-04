@@ -10,8 +10,8 @@ const NUM_CELLS: usize = WIDTH * HEIGHT;
 const ALL_VALUES: u32 = (1u32 << MAX_VALUE) - 1;
 const VALUE_SET: u32 = 1u32 << 31;
 
-const fn is_value_set(value: u32) -> bool {
-    value & VALUE_SET != 0
+const fn is_value_set(mask: u32) -> bool {
+    mask & VALUE_SET != 0
 }
 const fn get_value(mask: u32) -> u32 {
     32 - (mask & !VALUE_SET).leading_zeros()
