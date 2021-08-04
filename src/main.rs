@@ -423,6 +423,7 @@ fn main() {
                             if num_backtracks > 100 {
                                 board_stack.clear();
                                 board_stack.push(BoardInfo::new_blank());
+                                num_backtracks = 0;
                             }
                         }
                     }
