@@ -247,12 +247,12 @@ fn set_hidden_single(board: &mut [u32; NUM_CELLS]) -> LogicResult {
     return LogicResult::NONE;
 }
 
-fn set_single(mut board: &mut [u32; NUM_CELLS]) -> LogicResult {
-    let naked_result = set_naked_single(&mut board);
+fn set_single(board: &mut [u32; NUM_CELLS]) -> LogicResult {
+    let naked_result = set_naked_single(board);
     if naked_result != LogicResult::NONE {
         return naked_result;
     }
-    return set_hidden_single(&mut board);
+    return set_hidden_single(board);
 }
 
 fn print_board(output: &mut File, board: &[u32; NUM_CELLS], num_solutions: usize) -> () {
